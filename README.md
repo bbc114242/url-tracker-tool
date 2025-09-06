@@ -1,6 +1,10 @@
-# 域名跟踪工具
+# 🌐 域名跟踪工具
 
-一个用于跟踪网站 18+ 4色网 (`https://www.k8w4w.com`) 最新域名的Python工具，支持自动域名管理、系统托盘功能和图形界面。
+一个功能强大的域名跟踪和管理工具，支持自动域名管理、实时状态监控、系统托盘功能和现代化图形界面。
+
+[![GitHub](https://img.shields.io/badge/GitHub-url--tracker--tool-blue?logo=github)](https://github.com/bbc114242/url-tracker-tool)
+[![Python](https://img.shields.io/badge/Python-3.7+-green?logo=python)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ## 功能特性
 
@@ -11,10 +15,12 @@
 - **手动更新支持**：全部域名失效时提示用户手动更新
 
 ### 🖥️ 用户界面
-- **主界面GUI**：显示完整的域名历史记录和实时状态
+- **现代化GUI**：精美的图标设计和直观的用户界面
+- **主界面**：显示完整的域名历史记录和实时状态
 - **系统托盘**：支持最小化到系统托盘，鼠标悬停显示当前域名
 - **一键复制**：点击托盘图标自动复制最新域名到剪贴板
 - **状态监控**：实时显示当前检测状态和域名健康度
+- **GitHub集成**：状态栏内置GitHub链接，方便访问项目源码
 
 ### 🛡️ 可靠性保障
 - **异常处理**：完善的异常处理和错误恢复机制
@@ -27,6 +33,7 @@
 - **操作系统**：Windows 7/8/10/11
 - **Python版本**：Python 3.7+
 - **网络连接**：需要互联网连接进行域名检查
+- **依赖库**：tkinter, requests, threading, json等（详见requirements.txt）
 
 ## 安装说明
 
@@ -45,6 +52,12 @@ pip install -r requirements.txt
 ```bash
 python main.py
 ```
+
+### 4. 使用可执行文件（推荐）
+如果您不想安装Python环境，可以直接下载并运行预编译的exe文件：
+1. 下载 `域名跟踪器.exe`
+2. 双击运行即可，无需安装Python
+3. 首次运行会自动创建必要的配置文件
 
 ## 使用指南
 
@@ -83,6 +96,10 @@ python main.py
   - 清理无效域名：移除长期无效的域名
   - 导出/导入域名：备份和恢复域名列表
   - 域名统计：查看域名状态统计信息
+- **状态栏功能**：
+  - 实时时间显示
+  - GitHub链接按钮（📁 GitHub）
+  - 当前域名状态显示
 
 ### 右键菜单（域名列表）
 - **复制域名**：复制选中的域名
@@ -164,8 +181,18 @@ url/
 ├── tray_manager.py        # 系统托盘模块
 ├── gui_manager.py         # GUI界面模块
 ├── exception_handler.py   # 异常处理模块
+├── data_manager.py        # 数据管理模块
 ├── requirements.txt       # 依赖包列表
+├── build.py               # 打包构建脚本
+├── icon.ico               # 应用程序图标
+├── icon.svg               # 矢量图标源文件
 ├── README.md             # 说明文档
+├── backup/               # 代码备份目录
+├── release/              # 发布包目录
+│   ├── 域名跟踪器.exe    # 可执行文件
+│   ├── README.txt        # 使用说明
+│   ├── 安装说明.md       # 详细安装说明
+│   └── VERSION.txt       # 版本信息
 ├── data/                 # 数据目录
 │   └── domains.json      # 域名数据文件
 └── logs/                 # 日志目录
@@ -194,19 +221,42 @@ url/
 
 ## 更新日志
 
+### v1.2.0 (2025-01-06)
+- 🎨 **界面升级**：全新设计的应用程序图标
+- 🔗 **GitHub集成**：状态栏添加GitHub链接按钮
+- 📦 **打包优化**：完善的exe打包系统和发布流程
+- 💾 **数据管理**：统一的JSON数据存储格式
+- 📚 **文档完善**：详细的安装说明和版本信息
+
+### v1.1.0 (2024-12-XX)
+- 🔧 **代码重构**：模块化设计优化
+- 🛡️ **异常处理**：增强的错误处理和恢复机制
+- 📊 **数据存储**：改进的数据管理系统
+- 🔄 **自动备份**：代码和配置自动备份功能
+
 ### v1.0.0 (2024-01-XX)
-- 初始版本发布
-- 实现基础域名跟踪功能
-- 支持系统托盘和GUI界面
-- 完善的异常处理机制
-- 自动域名管理和清理功能
+- 🚀 **初始版本发布**
+- ✅ **基础功能**：域名跟踪和状态监控
+- 🖥️ **GUI界面**：完整的图形用户界面
+- 📱 **系统托盘**：托盘图标和快捷操作
+- 🔍 **智能检查**：自动域名验证和管理
 
 ## 技术支持
 
 如果在使用过程中遇到问题，请：
 1. 查看本文档的故障排除部分
 2. 检查日志文件获取详细错误信息
-3. 提交 Issue 描述问题和错误日志
+3. 访问 [GitHub仓库](https://github.com/bbc114242/url-tracker-tool) 提交Issue
+4. 在应用程序状态栏点击GitHub按钮快速访问项目页面
+
+## 贡献指南
+
+欢迎贡献代码和建议！请：
+1. Fork 本项目
+2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 打开 Pull Request
 
 ---
 
